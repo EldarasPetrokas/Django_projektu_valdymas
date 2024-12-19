@@ -1,0 +1,233 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #eef2f3;
+    color: #343a40;
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.container-fluid {
+    height: 100%; /* Make the container fill the viewport */
+    padding: 0; /* Remove extra padding to ensure full alignment */
+}
+
+.row {
+    height: 100%; /* Ensure the row spans the full height */
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Flexbox to align items in column */
+    min-height: 100vh; /* Ensure full height of the viewport */
+    position: relative; /* Enables proper positioning of bottom buttons */
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allows the menu to take up remaining space if needed */
+}
+
+.sidebar-nav li {
+    margin: 10px 0;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 10px 15px;
+    background-color: #343a40;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background-color: #495057;
+    transform: translateX(5px);
+}
+
+.sidebar-nav a.active {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sidebar-nav a.active:hover {
+    background-color: #0056b3;
+}
+
+.sidebar-bottom {
+    margin-top: auto; /* Push the buttons to the bottom */
+}
+
+.sidebar-bottom .btn {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.content-wrapper {
+    padding: 30px;
+    background-color: #eef2f3;
+    min-height: 100%; /* Fill the remaining space of the row */
+}
+
+
+
+
+.projektai-list-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projektai-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+    font-weight: bold;
+}
+
+.projektai-list {
+    list-style: none;
+    padding: 0;
+}
+
+.projektas-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #ffffff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.projektas-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.projektas-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.projektas-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+
+.projektas-detail-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projektas-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+    font-weight: bold;
+}
+
+.projektas-info p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.projektas-section {
+    margin-top: 20px;
+}
+
+.projektas-section h2 {
+    color: #007bff;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.list-group-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.projektas-image {
+    margin-top: 15px;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.projektas-description {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.register-container, .login-container, .password-change-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h1, .login-container h1, .password-change-container h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #343a40;
+    font-weight: bold;
+    text-align: center;
+}
+
+.register-container form, .login-container form, .password-change-container form {
+    margin-bottom: 15px;
+}
+
+.register-container .btn, .login-container .btn, .password-change-container .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 15px;
+}

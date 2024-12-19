@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mano Projektai</h1>
+{% if projektai %}
+<ul class="list-group projektai-list">
+    {% for projektas in projektai %}
+    <li class="list-group-item projektas-item d-flex justify-content-between align-items-center">
+        <!-- Project Information -->
+        <div>
+            <a href="{% url 'projektas_detail' projektas.pk %}" class="projektas-link">{{ projektas.pavadinimas }}</a>
+            <p>Vadovas: {{ projektas.vadovas }}</p>
+            <p>Pradžios data: {{ projektas.pradzios_data }}</p>
+            <p>Pabaigos data: {{ projektas.pabaigos_data|default:"Nenurodyta" }}</p>
+        </div>
+
+        <!-- Project Image -->
+        {% if projektas.nuotrauka %}
+        <img src="{{ projektas.nuotrauka.url }}" alt="{{ projektas.pavadinimas }}" class="img-thumbnail ms-3"
+             style="width: 200px; height: auto;">
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<!-- Pagination Controls -->
+<nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center">
+        <!-- Previous Page -->
+        {% if projektai.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page=1" aria-label="First">
+                <span aria-hidden="true">&laquo;&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ projektai.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% endif %}
+
+        <!-- Page Numbers -->
+        {% for num in projektai.paginator.page_range %}
+        {% if num == projektai.number %}
+        <li class="page-item active">
+            <a class="page-link" href="#">{{ num }}</a>
+        </li>
+        {% elif num > projektai.number|add:'-3' and num < projektai.number|add:'3' %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+        <!-- Next Page -->
+        {% if projektai.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ projektai.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ projektai.paginator.num_pages }}" aria-label="Last">
+                <span aria-hidden="true">&raquo;&raquo;</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% else %}
+<p class="text-muted">Jums nepriskirta jokių projektų.</p>
+{% endif %}
+{% endblock %}

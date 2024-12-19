@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron mt-4 text-center">
+    <h1 class="display-4">Sveiki atvykę į Projektų Valdymo Sistema!</h1>
+    <p class="lead">Paprastai valdykite savo projektus, darbus, klientus, darbuotojus, ir sąskaitas vienoje vietoje.</p>
+    <hr class="my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'projektai_list' %}" role="button">Peržiūrėti visus projektus</a>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-info btn-lg btn-block" href="{% url 'projektai_list' %}" role="button">D.U.K</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
